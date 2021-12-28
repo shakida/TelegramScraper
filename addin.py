@@ -36,7 +36,7 @@ try:
     api_id = cpass['cred']['id']
     api_hash = cpass['cred']['hash']
     phone = cpass['cred']['phone']
-    sleeptime = class['cred']['sleeptime']
+    sleeptime = cpass['cred']['sleeptime']
     client = TelegramClient(phone, api_id, api_hash)
 except KeyError:
     os.system('clear')
