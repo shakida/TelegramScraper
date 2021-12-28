@@ -1,6 +1,6 @@
 #!/bin/env python3
-# Modified by @AbirHasan2005
-# Telegram Group: http://t.me/linux_repo
+# Modified by shakida
+# Telegram Group: http://t.me/shakida69
 # Please give me credits if you use any codes from here.
 
 
@@ -25,7 +25,7 @@ def banner():
 {re} ╩ {cy}└─┘┴─┘└─┘{re}╚═╝  ╚═╝{cy}└─┘┴└─┴ ┴┴  └─┘┴└─
 
             Version: 1.3
-     Modified by @AbirHasan2005
+     Modified by shakida | https://t.me/shakida69
         """)
 
 cpass = configparser.RawConfigParser()
@@ -78,15 +78,17 @@ for i, g in enumerate(groups):
 print('')
 g_index = input(gr+"[+] Enter a Number: "+re)
 target_group=groups[int(g_index)]
-
+time.sleep(1)
+filename = input(gr+"[+] Type file name [without .CSV]:"+re)
+time.sleep(2)
 print(gr+'[+] Fetching Members ...')
 time.sleep(1)
 all_participants = []
 all_participants = client.get_participants(target_group, aggressive=True)
 
-print(gr+'[+] Saving in file ...')
+print(gr+f'[+] Saving in {filename}.csv')
 time.sleep(1)
-with open("members.csv","w",encoding='UTF-8') as f:
+with open(f"{filename}.csv","w",encoding='UTF-8') as f:
     writer = csv.writer(f,delimiter=",",lineterminator="\n")
     writer.writerow(['username','user id', 'access hash','name','group', 'group id'])
     for user in all_participants:
