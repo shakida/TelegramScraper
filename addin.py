@@ -36,7 +36,7 @@ try:
     api_id = cpass['cred']['id']
     api_hash = cpass['cred']['hash']
     phone = cpass['cred']['phone']
-    sleeptime = cpass['cred']['sleeptime']
+    SLEEPING = cpass['cred']['sleeptime']
     client = TelegramClient(phone, api_id, api_hash)
 except KeyError:
     os.system('clear')
@@ -104,7 +104,7 @@ n = 0
 for user in users:
     n += 1
     if n % 50 == 0:
-	    time.sleep(sleeptime)
+	    time.sleep(int(SLEEPING))
 	    try:
 	        print ("Try to adding {}".format(user['id']))
 	        if mode == 1:
@@ -117,7 +117,7 @@ for user in users:
 	            sys.exit(re+"[!] Invalid Mode Selected. Please Try Again.")
 	        client(InviteToChannelRequest(target_group_entity,[user_to_add]))
 	        print(gr+"[+] Waiting for 60-120 sec ...")
-	        time.sleep(random.randrange(60, 120))
+	        time.sleep(random.randrange(60, 180))
 	    except PeerFloodError:
 	        print(re+"[!] Getting Flood Errors from Telegram. \n[!] Script is stopping for now. \n[!] Please try again after some time.")
 	    except UserPrivacyRestrictedError:
