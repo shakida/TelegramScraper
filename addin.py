@@ -104,25 +104,25 @@ for user in users:
     n += 1
     if n % 50 == 0:
       print(gr+f"Sleep time: {SLEEPING} sec")
-	    time.sleep(int(SLEEPING))
-	    try:
-	        print("Try to adding {}".format(user['id']))
-	        if mode == 1:
-	            if user['username'] == "":
-	                continue
-	            user_to_add = client.get_input_entity(user['username'])
-	        elif mode == 2:
-	            user_to_add = InputPeerUser(user['id'], user['access_hash'])
-	        else:
-	            sys.exit(re+"[!] Invalid Mode Selected. Please Try Again.")
-	        client(InviteToChannelRequest(target_group_entity,[user_to_add]))
-	        print(gr+"[+] Waiting for 60-120 sec ...")
-	        time.sleep(random.randrange(60, 180))
-	    except PeerFloodError:
-	        print(re+"[!] Getting Flood Errors from Telegram. \n[!] Script is stopping for now. \n[!] Please try again after some time.")
-	    except UserPrivacyRestrictedError:
-	        print(re+"[!] The user's privacy settings do not allow you to do this. Skipping ...")
-	    except:
-	        traceback.print_exc()
-	        print(re+"[!] Unexpected Error ...")
-	        continue
+    time.sleep(int(SLEEPING))
+    try:
+        print("Try to adding {}".format(user['id']))
+        if mode == 1:
+            if user['username'] == "":
+                continue
+            user_to_add = client.get_input_entity(user['username'])
+        elif mode == 2:
+            user_to_add = InputPeerUser(user['id'], user['access_hash'])
+        else:
+            sys.exit(re+"[!] Invalid Mode Selected. Please Try Again.")
+       client(InviteToChannelRequest(target_group_entity,[user_to_add]))
+        print(gr+"[+] Waiting for 60-120 sec ...")
+        time.sleep(random.randrange(60, 180))
+    except PeerFloodError:
+        print(re+"[!] Getting Flood Errors from Telegram. \n[!] Script is stopping for now. \n[!] Please try again after some time.")
+    except UserPrivacyRestrictedError:
+        print(re+"[!] The user's privacy settings do not allow you to do this. Skipping ...")
+    except:
+        traceback.print_exc()
+        print(re+"[!] Unexpected Error ...")
+        continue
