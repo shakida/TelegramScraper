@@ -94,7 +94,6 @@ for i, group in enumerate(groups):
     print(str(i) + '- ' + group.title)
 g_index = input(gr+"Enter a Number: "+re)
 target_group=groups[int(g_index)]
-
 target_group_entity = InputPeerChannel(target_group.id,target_group.access_hash)
 
 print(gr+"[1] Add member by user ID\n[2] Add member by username ")
@@ -104,9 +103,10 @@ n = 0
 for user in users:
     n += 1
     if n % 50 == 0:
+      print(gr+f"Sleep time: {SLEEPING} sec")
 	    time.sleep(int(SLEEPING))
 	    try:
-	        print ("Try to adding {}".format(user['id']))
+	        print("Try to adding {}".format(user['id']))
 	        if mode == 1:
 	            if user['username'] == "":
 	                continue
