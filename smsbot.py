@@ -1,5 +1,5 @@
 #!/bin/env python3
-# Modified by @shakida
+# Modified by shakida
 # Telegram Group: http://t.me/shakida69
 # Please give me credits if you use any codes from here.
 
@@ -17,7 +17,7 @@ re="\033[1;31m"
 gr="\033[1;32m"
 cy="\033[1;36m"
 yo="\033[1;33m"
-SLEEP_TIME = 30
+SLEEP_TIME = 20
 
 class main():
 
@@ -28,7 +28,7 @@ class main():
     {re} ║ {cy}├┤ │  ├┤ {re}║ ╦  ╚═╗{cy}│  ├┬┘├─┤├─┘├┤ ├┬┘
     {re} ╩ {cy}└─┘┴─┘└─┘{re}╚═╝  ╚═╝{cy}└─┘┴└─┴ ┴┴  └─┘┴└─
 
-                Version: 1.3
+                Version: 1.4
          Modified by shakida | https://t.me/shakida69
             """)
 
@@ -52,7 +52,7 @@ class main():
             client.send_code_request(phone)
             os.system('clear')
             main.banner()
-            client.sign_in(phone, input(gr+'[+] Enter the sent code: '+re))
+            client.sign_in(phone, input(gr+'[+] Enter the verification code: '+re))
 
         os.system('clear')
         main.banner()
