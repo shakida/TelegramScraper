@@ -120,8 +120,6 @@ for user in users:
 	        time.sleep(random.randrange(60, 120))
 	    except PeerFloodError:
 	        print(re+"[!] Getting Flood Errors from Telegram. \n[!] Script is stopping for now. \n[!] Please try again after some time.")
-                client.disconnect()
-                sys.exit()
 	    except UserPrivacyRestrictedError:
 	        print(re+"[!] The user's privacy settings do not allow you to do this. Skipping ...")
 	    except:
