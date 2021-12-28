@@ -49,7 +49,7 @@ if not client.is_user_authorized():
     client.send_code_request(phone)
     os.system('clear')
     banner()
-    client.sign_in(phone, input(gr+'[+] Enter the verification code: '+re))
+    client.sign_in(phone, input(gr+'[+] Enter the verification code: '+cy))
 
 os.system('clear')
 banner()
@@ -92,21 +92,19 @@ for chat in chats:
 print(gr+'[+] Choose a group to add members: '+re)
 for i, group in enumerate(groups):
     print(str(i) + '- ' + group.title)
-g_index = input(gr+"Enter a Number: "+re)
+g_index = input(cy+"Enter a Number: "+re)
 target_group=groups[int(g_index)]
 target_group_entity = InputPeerChannel(target_group.id,target_group.access_hash)
 
-print(gr+"[1] Add member by user ID\n[2] Add member by username ")
+print(cy+"[1] Add member by user ID\n[2] Add member by username ")
 mode = int(input(gr+"Input: "+re))
 n = 0
 
 for user in users:
     n += 1
     if n % 50 == 0:
-      print(gr+f"Sleep time: {SLEEPING} sec")
-      time.sleep(int(SLEEPING))
       try:
-           print("Try to adding {}".format(user['id']))
+           print(cy+"Try to adding {}".format(user['id']))
            if mode == 1:
               if user['username'] == "":
                    continue
@@ -116,10 +114,11 @@ for user in users:
            else:
               sys.exit(re+"[!] Invalid Mode Selected. Please Try Again.")
            client(InviteToChannelRequest(target_group_entity,[user_to_add]))
-           print(gr+"[+] Waiting for 60-120 sec ...")
-           time.sleep(random.randrange(60, 180))
+           print(gr+"[✓] {} successfully added".format(user['id']))
+           print(cy+f"[^] Sleep time: {SLEEPING} sec")
+           time.sleep(int(SLEEPING))
       except PeerFloodError:
-           print(re+"[!] Getting Flood Errors from Telegram. \n[!] Script is stopping for now. \n[!] Please try again after some time.")
+           print(re+"[!] Getting Flood Errors from Telegram. \n[!] Please try again after some time.")
       except UserPrivacyRestrictedError:
            print(re+"[!] The user's privacy settings do not allow you to do this. Skipping ...")
       except:
