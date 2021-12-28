@@ -1,5 +1,5 @@
 #!/bin/env python3
-# Modified by @shakida
+# Modified by shakida
 # Telegram ac: http://t.me/shakida69
 # Please give me credits if you use any codes from here.
 
@@ -25,8 +25,8 @@ def banner():
 {re} ║ {cy}├┤ │  ├┤ {re}║ ╦  ╚═╗{cy}│  ├┬┘├─┤├─┘├┤ ├┬┘
 {re} ╩ {cy}└─┘┴─┘└─┘{re}╚═╝  ╚═╝{cy}└─┘┴└─┴ ┴┴  └─┘┴└─
 
-            Version: 1.3
-     Modified by @shakida69 | https://t.me/shakida
+            Version: 1.4
+     Modified by shakida69 | https://t.me/shakida
         """)
 
 cpass = configparser.RawConfigParser()
@@ -49,7 +49,7 @@ if not client.is_user_authorized():
     client.send_code_request(phone)
     os.system('clear')
     banner()
-    client.sign_in(phone, input(gr+'[+] Enter the sent code: '+re))
+    client.sign_in(phone, input(gr+'[+] Enter the verification code: '+re))
 
 os.system('clear')
 banner()
@@ -106,7 +106,7 @@ for user in users:
     if n % 50 == 0:
 	    time.sleep(sleeptime)
 	    try:
-	        print ("Adding {}".format(user['id']))
+	        print ("Try to adding {}".format(user['id']))
 	        if mode == 1:
 	            if user['username'] == "":
 	                continue
@@ -116,8 +116,8 @@ for user in users:
 	        else:
 	            sys.exit(re+"[!] Invalid Mode Selected. Please Try Again.")
 	        client(InviteToChannelRequest(target_group_entity,[user_to_add]))
-	        print(gr+"[+] Waiting for 60-180 sec ...")
-	        time.sleep(random.randrange(60, 180))
+	        print(gr+"[+] Waiting for 60-120 sec ...")
+	        time.sleep(random.randrange(60, 120))
 	    except PeerFloodError:
 	        print(re+"[!] Getting Flood Errors from Telegram. \n[!] Script is stopping for now. \n[!] Please try again after some time.")
 	    except UserPrivacyRestrictedError:
