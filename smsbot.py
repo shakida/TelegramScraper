@@ -1,6 +1,6 @@
 #!/bin/env python3
-# Modified by @AbirHasan2005
-# Telegram Group: http://t.me/linux_repo
+# Modified by @shakida
+# Telegram Group: http://t.me/shakida69
 # Please give me credits if you use any codes from here.
 
 
@@ -29,7 +29,7 @@ class main():
     {re} ╩ {cy}└─┘┴─┘└─┘{re}╚═╝  ╚═╝{cy}└─┘┴└─┴ ┴┴  └─┘┴└─
 
                 Version: 1.3
-         Modified by @AbirHasan2005
+         Modified by shakida | https://t.me/shakida69
             """)
 
     def send_sms():
