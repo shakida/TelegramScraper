@@ -79,7 +79,7 @@ print('')
 g_index = input(gr+"[+] Enter a Number: "+re)
 target_group=groups[int(g_index)]
 time.sleep(1)
-filename = input(gr+"[+] Type file name [without .CSV]:"+re)
+filename = input(gr+"[+] Type file name [without .csv]: "+re)
 time.sleep(2)
 print(gr+'[+] Fetching Members ...')
 time.sleep(1)
