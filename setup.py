@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #!/bin/env python3
-# Modified by @AbirHasan2005
-# Telegram Group: http://t.me/linux_repo
+# Modified by @shakida
+# Telegram ac: http://t.me/shakida69
 # Please give me credits if you use any codes from here.
 
 
@@ -31,10 +31,12 @@ xhash = input(gr+"[+] Enter Hash : "+re)
 cpass.set('cred', 'hash', xhash)
 xphone = input(gr+"[+] Enter Phone Number: "+re)
 cpass.set('cred', 'phone', xphone)
+xsleep = input(gr+"[+] Enter sleep time in sec: "+re)
+cpass.set('cred', 'sleeptime', xsleep)
 with open('config.data', 'w') as setup:
 	cpass.write(setup)
-print(gr+"[+] Setup complete!")
+print(gr+"[+] Setup completed!")
 print(gr+"[+] Now you can run any tool!")
 print(gr+"[+] Make sure to read README.md before using this tool.")
-print(gr+"[+] https://github.com/AbirHasan2005/TelegramScraper/blob/master/README.md")
-print("\033[92m[+] Telegram Group: \033[96mhttp://t.me/linux_repo\033[0m")
+print(gr+"[+] https://github.com/shakida/TelegramScraper/blob/master/README.md")
+print("\033[92m[+] Telegram: \033[96mhttp://t.me/shakida69\033[0m")
