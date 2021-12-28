@@ -1,6 +1,6 @@
 #!/bin/env python3
-# Modified by @AbirHasan2005
-# Telegram Group: http://t.me/linux_repo
+# Modified by @shakida
+# Telegram ac: http://t.me/shakida69
 # Please give me credits if you use any codes from here.
 
 from telethon.sync import TelegramClient
@@ -26,7 +26,7 @@ def banner():
 {re} ╩ {cy}└─┘┴─┘└─┘{re}╚═╝  ╚═╝{cy}└─┘┴└─┴ ┴┴  └─┘┴└─
 
             Version: 1.3
-     Modified by @AbirHasan2005
+     Modified by @shakida69 | https://t.me/shakida
         """)
 
 cpass = configparser.RawConfigParser()
@@ -36,6 +36,7 @@ try:
     api_id = cpass['cred']['id']
     api_hash = cpass['cred']['hash']
     phone = cpass['cred']['phone']
+    sleeptime = class['cred']['sleeptime']
     client = TelegramClient(phone, api_id, api_hash)
 except KeyError:
     os.system('clear')
@@ -103,7 +104,7 @@ n = 0
 for user in users:
     n += 1
     if n % 50 == 0:
-	    time.sleep(900)
+	    time.sleep(sleeptime)
 	    try:
 	        print ("Adding {}".format(user['id']))
 	        if mode == 1:
