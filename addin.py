@@ -72,7 +72,7 @@ chats = []
 last_date = None
 chunk_size = 200
 groups=[]
-
+SLEEPING = SLEEPING
 result = client(GetDialogsRequest(
              offset_date=last_date,
              offset_id=0,
