@@ -24,7 +24,7 @@ def banner():
 {re} ║ {cy}├┤ │  ├┤ {re}║ ╦  ╚═╗{cy}│  ├┬┘├─┤├─┘├┤ ├┬┘
 {re} ╩ {cy}└─┘┴─┘└─┘{re}╚═╝  ╚═╝{cy}└─┘┴└─┴ ┴┴  └─┘┴└─
 
-            Version: 1.3
+            Version: 1.4
      Modified by shakida | https://t.me/shakida69
         """)
 
@@ -86,7 +86,7 @@ time.sleep(1)
 all_participants = []
 all_participants = client.get_participants(target_group, aggressive=True)
 
-print(gr+f'[+] Saving in {filename}.csv')
+print(gr+f'[+] Saving users data in {filename}.csv')
 time.sleep(1)
 with open(f"{filename}.csv","w",encoding='UTF-8') as f:
     writer = csv.writer(f,delimiter=",",lineterminator="\n")
