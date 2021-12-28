@@ -15,7 +15,9 @@ def banner():
 	print(f"""
 	{re}╔═╗{cy}┌─┐┌┬┐┬ ┬┌─┐
 	{re}╚═╗{cy}├┤  │ │ │├─┘
-	{re}╚═╝{cy}└─┘ ┴ └─┘┴   v1.4
+	{re}╚═╝{cy}└─┘ ┴ └─┘┴
+                   V1.4
+        Modified by shakida | https://t.me/shakida69
 	""")
 banner()
 print(gr+"[+] Installing requierments ...")
