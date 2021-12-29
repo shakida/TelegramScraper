@@ -6,7 +6,7 @@
 from telethon.sync import TelegramClient
 from telethon.tl.functions.messages import GetDialogsRequest
 from telethon.tl.types import InputPeerEmpty, InputPeerChannel, InputPeerUser
-from telethon.errors.rpcerrorlist import PeerFloodError, UserPrivacyRestrictedError
+from telethon.errors.rpcerrorlist import PeerFloodError, UserPrivacyRestrictedError, UserChannelsTooMuchError, UserIdInvalidError, FloodWaitError
 from telethon.tl.functions.channels import InviteToChannelRequest
 import configparser
 import os, sys
@@ -92,7 +92,7 @@ for chat in chats:
 print(gr+'[+] Choose a group to add members: '+re)
 for i, group in enumerate(groups):
     print(str(i) + '- ' + group.title)
-g_index = input(cy+"Enter a Number: "+re)
+g_index = input(gr+"Enter a Number: "+re)
 target_group=groups[int(g_index)]
 target_group_entity = InputPeerChannel(target_group.id,target_group.access_hash)
 
@@ -101,8 +101,8 @@ mode = int(input(gr+"Input: "+re))
 n = 0
 
 for user in users:
-    n += 1
-    if n % 50 == 0:
+  #  n += 1
+ #   if n % 50 == 0:
       try:
            print(cy+"Try to adding {}".format(user['id']))
            if mode == 1:
@@ -114,14 +114,26 @@ for user in users:
            else:
               sys.exit(re+"[!] Invalid Mode Selected. Please Try Again.")
            client(InviteToChannelRequest(target_group_entity,[user_to_add]))
-           print(gr+"[✓] {} successfully added".format(user['id']))
-           print(cy+f"[^] Sleep time: {SLEEPING} sec")
+           print(gr+"[✓] successfully added")
+           print(cy+f"[•] Sleep time: {SLEEPING} sec")
            time.sleep(int(SLEEPING))
-      except PeerFloodError:
-           print(re+"[!] Getting Flood Errors from Telegram. \n[!] Please try again after some time.")
-      except UserPrivacyRestrictedError:
-           print(re+"[!] The user's privacy settings do not allow you to do this. Skipping ...")
+           continue
+      except PeerFloodError as e:
+           print(re+f"[!] {e}")
+           continue
+      except FloodWaitError as e:
+           print(re+f"[!] {e}")
+           return time.sleep(int(f'{e[10:15]}'))
+           continue
+      except UserPrivacyRestrictedError as e:
+           print(re+f"[!] {e}")
+           continue
+      except UserChannelsTooMuchError as e:
+           print(re+f"[!] {e}")
+           continue
+      except UserIdInvalidError as e:
+           print(re+f"[!] {e}")
+           continue
       except:
            traceback.print_exc()
            print(re+"[!] Unexpected Error ...")
-           continue
